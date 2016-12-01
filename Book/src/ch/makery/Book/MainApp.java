@@ -3,7 +3,10 @@ package ch.makery.Book;
 
 import java.io.IOException;
 
+import ch.makery.Book.model.Book;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -72,4 +75,28 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+ private ObservableList<Book> bookData = FXCollections.observableArrayList();
+    
+    /**
+     * Constructor to charge data
+     */
+    public MainApp(){
+    	bookData.add(new Book("El lazarillo de Tormes","Anónimo"));
+    	bookData.add(new Book("Don Quijote","Miguel de Cervantes"));
+    	bookData.add(new Book("Don Juan Tenorio","José Zorrilla"));
+    	bookData.add(new Book("Rimas","Gustavo Adolfo Bécquer"));
+    	bookData.add(new Book("Soleadades","Antonio Machado"));
+    	bookData.add(new Book("Luces de Bohemia","Ramón María del Valle Inclán"));
+    	bookData.add(new Book("La casa de Bernarda Alba","Federico García Lorca"));
+    	bookData.add(new Book("Nada","Carmen Laforet"));
+    	bookData.add(new Book("El camino","Miguel Delibes"));
+    	bookData.add(new Book("Cien años de soledad","Gabriel García Márquez"));
+    }
+    /**
+    * Returns the data as an observable list of Books. 
+    * @return
+    */
+   public ObservableList<Book> getBookData() {
+       return bookData;
+   }
 }
